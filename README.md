@@ -1,2 +1,3 @@
-# tubes_weblan
-progress tubes weblan
+tubes_weblan
+
+ini adalah project weblan
