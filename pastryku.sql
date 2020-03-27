@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2020 at 06:51 AM
+-- Generation Time: Mar 27, 2020 at 03:16 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -72,13 +72,20 @@ INSERT INTO `menu` (`id_menu`, `nama_menu`, `Harga`, `foto`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id` int(10) NOT NULL,
-  `fname` varchar(150) NOT NULL,
-  `lname` varchar(150) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `password` varchar(150) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `register_date` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `nama`, `email`, `username`, `password`, `register_date`) VALUES
+(1, 'fauzi', 'fauziari2608@gmail.com', 'fauzi', '202cb962ac59075b964b07152d234b70', NULL);
 
 --
 -- Indexes for dumped tables
@@ -122,7 +129,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

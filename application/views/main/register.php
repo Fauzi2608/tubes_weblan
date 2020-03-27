@@ -1,0 +1,41 @@
+<section class="banner_area">
+            <div class="container">
+                <div class="banner_text">
+                    <h3>Register</h3>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+<div class="container">
+
+<?php echo form_open('main/register'); ?>
+<?php echo validation_errors(); ?>    
+<div class="row justify-content-center">    
+        <div class="col-md-4">
+            
+            <div class="form-group">
+                <label>Nama</label>
+                <input type="text" class="form-control" name="nama" placeholder="Nama">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register Now</button>
+        </div>
+</div>
+<?php echo form_close(); ?>
+</div>
