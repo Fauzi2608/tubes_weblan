@@ -57,15 +57,5 @@
         <!--================End Contact Form Area =================-->
         
         <!--================End Banner Area =================-->
-        <section class="map_area">
-            <div id="mapBox" class="mapBox row m0" 
-                data-lat="40.701083" 
-                data-lon="-74.1522848" 
-                data-zoom="13" 
-                data-marker="img/map-marker.png" 
-                data-info="54B, Tailstoi Town 5238 La city, IA 522364"
-                data-mlat="40.701083"
-                data-mlon="-74.1522848">
-            </div>
-        </section>
+        
         <!--================End Banner Area =================-->

@@ -5,11 +5,11 @@
    $data = array(
     'nama' => $this->input->post('nama'),
     'email' => $this->input->post('email'),
-                'username' => $this->input->post('username'),
-                'password' => $enc_password,
+    'username' => $this->input->post('username'),
+    'password' => $enc_password,
    );
 
-   // Insert user
+
    return $this->db->insert('user', $data);
   }
 

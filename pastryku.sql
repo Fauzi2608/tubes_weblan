@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2020 at 03:16 AM
+-- Generation Time: Mar 31, 2020 at 07:25 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -25,6 +25,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(30) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nama`, `username`, `password`) VALUES
+(2, 'fauzi', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cart`
 --
 
@@ -40,21 +60,21 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Table structure for table `products`
 --
 
-CREATE TABLE `menu` (
-  `id_menu` int(50) NOT NULL,
-  `nama_menu` varchar(50) NOT NULL,
+CREATE TABLE `products` (
+  `product_id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `Harga` varchar(50) NOT NULL,
-  `foto` text NOT NULL
+  `foto` text NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `menu`
+-- Dumping data for table `products`
 --
 
-INSERT INTO `menu` (`id_menu`, `nama_menu`, `Harga`, `foto`) VALUES
+INSERT INTO `products` (`product_id`, `name`, `Harga`, `foto`) VALUES
 (13, 'Brownies', '35.5', '1129918946_Brownies.jpg'),
 (14, 'Brownies Panggang', '40.0', '143850021_brownies2.jpg'),
 (15, 'Brownies Greentea', '45.5', '1154141323_brownies3.jpg'),
@@ -85,11 +105,18 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `username`, `password`, `register_date`) VALUES
-(1, 'fauzi', 'fauziari2608@gmail.com', 'fauzi', '202cb962ac59075b964b07152d234b70', NULL);
+(1, 'fauzi', 'fauziari2608@gmail.com', 'fauzi', '202cb962ac59075b964b07152d234b70', NULL),
+(2, 'fauzi', 'fauzighifari@gmail.com', 'uzi', '202cb962ac59075b964b07152d234b70', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indexes for table `cart`
@@ -98,10 +125,10 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_cart`);
 
 --
--- Indexes for table `menu`
+-- Indexes for table `products`
 --
-ALTER TABLE `menu`
-  ADD PRIMARY KEY (`id_menu`);
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `user`
@@ -114,22 +141,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
   MODIFY `id_cart` int(30) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT for table `products`
 --
-ALTER TABLE `menu`
-  MODIFY `id_menu` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+ALTER TABLE `products`
+  MODIFY `product_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

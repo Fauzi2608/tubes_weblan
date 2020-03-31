@@ -9,7 +9,7 @@
         <br>
 <div class="container">
 
-<?php echo form_open('main/register'); ?>
+<?php echo form_open('user/register'); ?>
 <?php echo validation_errors(); ?>    
 <div class="row justify-content-center">    
         <div class="col-md-4">

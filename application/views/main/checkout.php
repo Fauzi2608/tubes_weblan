@@ -2,7 +2,7 @@
         <section class="billing_details_area p_100">
             <div class="container">
                 <div class="return_option">
-                	<h4>Sudah Punya Akun ? <a href="#">Click here to login</a></h4>
+                	<h4>Sudah Punya Akun ? <a href="<?php echo base_url('index.php/main/login')?>">Click here to login</a></h4>
                 </div>
                 <div class="row">
                 	<div class="col-lg-7">

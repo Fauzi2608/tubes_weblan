@@ -8,7 +8,7 @@
         <br>
         <br>
 <div class="container">
-  <?php echo form_open('main/login'); ?>
+  <?php echo form_open('user/login'); ?>
      <div class="row justify-content-center">
          <div class="col-lg-4">
              

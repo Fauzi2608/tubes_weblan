@@ -42,7 +42,7 @@
 			<div class="main_menu_area">
 				<div class="container">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
-						<a class="navbar-brand" href="<?php echo base_url(); ?>">
+						<a class="navbar-brand" href="<?php echo base_url(''); ?>">
 						<img src="<?php echo base_url(); ?>assets/img/logoutama.png" alt="" width="80px">
 						
 
@@ -56,16 +56,12 @@
 						</button>
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav mr-auto">
-								<li><a href="<?php echo base_url()?>">Home</a></li>
-                                <li><a href="<?php echo base_url('index.php/main/aboutus')?>">About Us</a></li>
-                                <li><a href="<?php echo base_url('index.php/main/contact')?>">Contact Us</a></li>
+                                <li><a href="<?php echo base_url('index.php/admin/product')?>">Produk</a></li>
 							</ul>
 							<ul class="navbar-nav justify-content-end">
-								<li><a href="<?php echo base_url('index.php/main/gallery')?>">Gallery</a></li>
-								<li><a href="<?php echo base_url('index.php/main/shop')?>">Shop</a></li>
-								<li><a href="<?php echo base_url('index.php/main/cart')?>">Cart</a></li>
-                                <li><a href="<?php echo base_url('index.php/main/login')?>">Login</a></li>
-                                <li><a href="<?php echo base_url('index.php/admin/login_admin')?>">admin</a></li>
+								<li><a href="<?php echo base_url('index.php/admin/pesanan')?>">Pesanan</a></li>
+								<li><a href="<?php echo base_url('index.php/admin/laporan')?>">Laporan Penjualan</a></li>
+								
 							</ul>
 						</div>
 					</nav>
