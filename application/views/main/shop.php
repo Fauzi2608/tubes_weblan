@@ -18,7 +18,7 @@
 									</div>
 									<div class="cake_text">
 										
-										<h4><?php echo $m->Harga; ?></h4>
+										<h4><?php echo $m->harga; ?></h4>
 										<h3><?php echo $m->name; ?></h3>
 										<a class="pest_btn" href="<?php echo base_url('index.php/main/cart')?>">Add to cart</a>
 									</div>

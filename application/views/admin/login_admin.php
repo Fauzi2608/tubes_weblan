@@ -1,59 +1,67 @@
-<meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="icon" href="<?php echo base_url(); ?>assets/img/logoutama.png" type="image/x-icon" />
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Cake - Bakery</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Website PASTRYKU</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets1/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets1/assets/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets1/assets/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets1/assets/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets1/assets/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
 
-        <!-- Icon css link -->
-        <link href="<?php echo base_url(); ?>assets/css/font-awesome.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/vendors/linearicons/style.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/vendors/flat-icon/flaticon.css" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- Rev slider css -->
-        <link href="<?php echo base_url(); ?>assets/vendors/revolution/css/settings.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/vendors/revolution/css/layers.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/vendors/revolution/css/navigation.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/vendors/animate-css/animate.css" rel="stylesheet">
-        
-        <!-- Extra plugin css -->
-        <link href="<?php echo base_url(); ?>assets/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/vendors/magnifc-popup/magnific-popup.css" rel="stylesheet">
-        
-        <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/css/responsive.css" rel="stylesheet">
-<section class="banner_area">
-            <div class="container">
-                <div class="banner_text">
-                    <h3>Login Admin</h3>
-                </div>
+<body class=" bg-primary">
+  <div class="container">
+    <?php echo form_open('admin/login_admin'); ?>
+    <div class="login-box">
+
+      <center>
+
+
+        <h2>WEBSITE & APLIKASI</h2>
+        <h3>PASTRYKU</h3>
+
+        <br/>
+
+             </center>
+
+      <div class="login-box-body">
+
+        <br>
+        <br>
+        <p class="login-box-msg text-bold">LOGIN</p>
+         
+          <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Username" name="username" required="required" autocomplete="off">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" class="form-control" placeholder="Password" name="password" required="required" autocomplete="off">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">LOGIN</button>
             </div>
-        </section>
+          </div>
+        
+
         <br>
         <br>
-<div class="container">
-  <?php echo form_open('admin/login_admin'); ?>
-     <div class="row justify-content-center">
-         <div class="col-lg-4">
-             
-             <div class="form-group">
-                 <input type="text" name="username" class="form-control" placeholder="Enter Username" required autofocus>
-             </div>
-             <div class="form-group">
-                 <input type="password" name="password" class="form-control" placeholder="Enter Password" required autofocus>
-             </div>
-             <button type="submit" class="btn btn-primary btn-block">Login</button>
-             
-             <br>
-                   <?php echo $this->session->flashdata('login_failed'); ?>
-             
-         </div>
+        <br>
+      </div>
+      <?php echo $this->session->flashdata('login_failed'); ?>
+      
+    </div>
+    <?php echo form_close(); ?>
+  </div>
 
-        <h2></h2> 
-     </div>
 
-<?php echo form_close(); ?>
-</div>
+  <script src="<?php echo base_url(); ?>assets1/assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets1/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+
+

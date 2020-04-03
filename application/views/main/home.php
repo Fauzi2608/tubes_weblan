@@ -89,6 +89,11 @@
                 </ul>
             </div>
         </section>
+        <?php if ($this->session->flashdata('admin_loggedin')): ?>
+                      <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('admin_loggedin'); ?>
+                      </div>
+                    <?php endif; ?>
         <!--================End Slider Area =================-->
         
         <!--================Welcome Area =================-->

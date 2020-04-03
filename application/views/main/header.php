@@ -38,6 +38,7 @@
         <![endif]-->
     </head>
 <header class="main_header_area">
+    
 			
 			<div class="main_menu_area">
 				<div class="container">

@@ -1,17 +1,19 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Admin extends CI_Controller {
+class Admin extends CI_Controller 
+{
  public function __construct()
  {
   parent::__construct();
   $this->load->helper('url');
-  $this->load->model('Admin_model');
+  $this->load->model('admin_model');
   $this->load->library(array('form_validation','session'));
 }
 
-public function login_admin(){
+public function login_admin()
+{
  
   $this->form_validation->set_rules('username', 'Username', 'required');
-            $this->form_validation->set_rules('password', 'Password', 'required');
+  $this->form_validation->set_rules('password', 'Password', 'required');
 
             if($this->form_validation->run() === FALSE){
                 
@@ -26,7 +28,7 @@ public function login_admin(){
                 $password = md5($this->input->post('password'));
 
   
-                $admin_id = $this->Admin_model->login_admin($username, $password);
+                $admin_id = $this->admin_model->login_admin($username, $password);
 
                 if($admin_id){
 
@@ -37,7 +39,7 @@ public function login_admin(){
                     );
                     $this->session->set_flashdata('admin_loggedin','Selamat Anda Berhasil Login');
 
-                    redirect('products/product');
+                    redirect('admin/home_admin');
                 } else {
         
                     $this->session->set_flashdata('login_failed', '<div class="alert   
@@ -49,6 +51,12 @@ public function login_admin(){
             }
         }
 
-    
+        public function home_admin(){
 
-}
+            $this->load->view('admin/header_admin');
+            $this->load->view('admin/home_admin');
+        }
+    }
+
+
+    

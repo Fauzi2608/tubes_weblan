@@ -4,11 +4,11 @@ class Product_model extends CI_Model
 {
     private $_table = "products";
 
-    public $product_id;
+  
     public $name;
     public $harga;
-    public $image = "default.jpg";
-    
+    public $foto = 'default.jpg';
+
 
     public function rules()
     {
@@ -17,11 +17,9 @@ class Product_model extends CI_Model
             'label' => 'Name',
             'rules' => 'required'],
 
-            ['field' => 'Harga',
-            'label' => 'harga',
-            'rules' => 'numeric'],
-            
-           
+            ['field' => 'harga',
+            'label' => 'Harga',
+            'rules' => 'required']
         ];
     }
 
@@ -38,11 +36,10 @@ class Product_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->product_id = uniqid();
         $this->name = $post["name"];
-        $this->Harga = $post["Harga"];
-        
-        return $this->db->insert($this->_table, $this);
+        $this->harga = $post["harga"];
+        $this->foto = $this->uploadfoto();
+        $this->db->insert($this->_table, $this);
     }
 
     public function update()
@@ -50,12 +47,37 @@ class Product_model extends CI_Model
         $post = $this->input->post();
         $this->product_id = $post["id"];
         $this->name = $post["name"];
-        $this->Harga = $post["Harga"];
-        return $this->db->update($this->_table, $this, array('product_id' => $post['id']));
+        $this->harga = $post["harga"];
+
+        if (!empty($_FILES["foto"]["name"])) {
+        $this->foto = $this->uploadfoto();
+    } else {
+        $this->foto = $post["old_image"];
+    }
+        $this->db->update($this->_table, $this, array('product_id' => $post['id']));
     }
 
-    public function delete($id)
+    public function delete($where,$table){
+
+        $this->db->where($where);
+
+        $this->db->delete($table);
+
+    }
+    private function uploadfoto()
     {
-        return $this->db->delete($this->_table, array("product_id" => $id));
+    $config['upload_path']          = './assets/img/shop/';
+    $config['allowed_types']        = 'gif|jpg|png|jfif';
+    $config['file_name']            = $this->name;
+    $config['overwrite']            = true;
+    $config['max_size']             = 2000;
+
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('foto')) {
+        return $this->upload->data("file_name");
+    }
+    
+    return "default.jpg";
     }
 }

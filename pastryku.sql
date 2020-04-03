@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2020 at 07:25 AM
+-- Generation Time: Apr 03, 2020 at 04:52 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -64,9 +64,9 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `products` (
-  `product_id` int(50) NOT NULL,
+  `product_id` int(30) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `Harga` varchar(50) NOT NULL,
+  `harga` varchar(50) NOT NULL,
   `foto` text NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -74,7 +74,7 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `name`, `Harga`, `foto`) VALUES
+INSERT INTO `products` (`product_id`, `name`, `harga`, `foto`) VALUES
 (13, 'Brownies', '35.5', '1129918946_Brownies.jpg'),
 (14, 'Brownies Panggang', '40.0', '143850021_brownies2.jpg'),
 (15, 'Brownies Greentea', '45.5', '1154141323_brownies3.jpg'),
@@ -83,7 +83,10 @@ INSERT INTO `products` (`product_id`, `name`, `Harga`, `foto`) VALUES
 (18, 'Tiramisu', '90.0', '890401717_tiramisu1.jpg'),
 (19, 'Choco Lava', '60.0', '1745504498_chocolava.jpg'),
 (20, 'Banana Roll Cake', '75.0', '734329551_rollcake.jfif'),
-(21, 'Bolen', '45.0', '863216264_bolen.jpg');
+(21, 'Bolen Keju', '45.0', '863216264_bolen.jpg'),
+(56, 'Bolen Cokelat', '45.0', 'Bolen_Cokelat.jpg'),
+(57, 'Pie Buah', '10.0', 'Pie_Buah.jpg'),
+(58, 'Red Velvet', '120.0', 'Red_Velvet.jpg');
 
 -- --------------------------------------------------------
 
@@ -156,7 +159,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `user`
